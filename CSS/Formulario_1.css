@@ -1,3 +1,4 @@
+/*-- Variables CSS para colores, tamaños y fuentes --*/
 :root {
     --azul: #164a98;
     --rojo: #d2232a;
@@ -6,65 +7,23 @@
     --tamanio-fuente: 16px;
     --fuente: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
- 
+/*-- Estilos generales para el formulario --*/
 body {
     font-family: var(--fuente);
     padding: 20px 40px;
 }
- 
+/*-- Título del formulario --*/
 h1 {
     color: var(--azul);
     margin-bottom: 10px;
 }
- 
+/*-- Lista de requisitos --*/
 ul {
     margin-bottom: 30px;
     padding-left: 20px;
 }
  
-/* =======================================
-   CLASES DE VALIDACIÓN
-   ======================================= */
-.input-error {
-    border: 2px solid var(--rojo) !important;
-}
- 
-/* =======================================
-   CONTENEDORES DE INPUT Y ETIQUETA
-   ======================================= */
-.contenedor-input-etiqueta {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
- 
-label {
-    font-size: var(--tamanio-fuente);
-    color: var(--azul);
-    margin-bottom: 4px;
-}
- 
-input[type="text"],
-input[type="password"] {
-    height: 40px;
-    padding: 0 8px;
-    font-size: var(--tamanio-fuente);
-    font-family: var(--fuente);
-    border: 1px solid var(--gris);
-    border-radius: var(--borde-radio);
-    outline: none;
-    width: 100%;
-}
- 
-input[type="text"]:focus,
-input[type="password"]:focus {
-    border-color: var(--azul);
-}
- 
-
-/* =======================================
-   FORMULARIO 2 — SECCIÓN AZUL
-   ======================================= */
+/*-- Contenedor del formulario con borde y fondo blanco --*/
 .contenedor-formulario-azul {
     max-width: 300px;
     width: 100%;
@@ -73,21 +32,14 @@ input[type="password"]:focus {
     padding: 20px 24px;
 }
  
-.contenedor-formulario-azul h2 {
-    color: var(--azul);
-    font-size: var(--tamanio-fuente);
-    text-align: center;
-    margin-bottom: 24px;
-}
- 
-/* Contenedor horizontal — ícono + input */
+/*-- Contenedor horizontal — ícono + input --*/
 .contenedor-horizontal {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
 }
  
-/* Ícono azul a la izquierda */
+/*-- Ícono azul a la izquierda --*/
 .icono-etiqueta {
     background-color: var(--azul);
     color: var(--gris);
@@ -102,20 +54,7 @@ input[type="password"]:focus {
     border-radius: var(--borde-radio) 0 0 var(--borde-radio);
 }
  
-/* Input del formulario 2 */
-.contenedor-horizontal input[type="text"],
-.contenedor-horizontal input[type="password"] {
-    border-radius: 0 var(--borde-radio) var(--borde-radio) 0;
-    border-left: none;
-    background-color: color-mix(in srgb, var(--gris) 30%, transparent);
-}
- 
-.contenedor-horizontal input::placeholder {
-    color: #888;
-    font-style: normal;
-}
- 
-/* Botón formulario 2 */
+/*-- Botón formulario --*/
 #btnCrearCuenta {
     display: block;
     width: 100%;
@@ -136,12 +75,8 @@ input[type="password"]:focus {
     background-color: color-mix(in srgb, var(--azul) 80%, black);
 }
 
-/* Borde rojo en campos con error */
-.input-error {
-    border: 2px solid var(--rojo) !important;
-}
 
-/* Mensaje de error debajo del input */
+/*-- Mensaje de error debajo del input --*/
 .mensaje-error {
     color: var(--rojo);
     font-size: 12px;

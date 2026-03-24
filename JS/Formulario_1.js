@@ -1,24 +1,18 @@
-// Cuando el botón es clickeado, ejecutar la validación
+//-- Cuando el botón es clickeado, ejecutar la validación -- \\
 document.getElementById('btnCrearCuenta').addEventListener('click', function () {
 
-    // =============================================
-    // 1. OBTENER LOS VALORES DE LOS CAMPOS
-    // =============================================
+    //-- 1. OBTENER LOS VALORES DE LOS CAMPOS --\\
     const usuario = document.getElementById('txtUsuario2');
     const contrasena = document.getElementById('txtContrasena2');
     const confirmar = document.getElementById('txtConfirmarContrasena2');
 
-    // =============================================
-    // 2. LIMPIAR ERRORES ANTERIORES
-    // =============================================
+    //-- 2. LIMPIAR ERRORES ANTERIORES --\\
     limpiarErrores([usuario, contrasena, confirmar]);
 
-    // Variable para saber si el formulario es válido
+    //-- Variable para saber si el formulario es válido --\\
     let valido = true;
 
-    // =============================================
-    // 3. VALIDAR QUE NINGÚN CAMPO ESTÉ VACÍO
-    // =============================================
+    //-- 3. VALIDAR QUE NINGÚN CAMPO ESTÉ VACÍO --\\
     if (usuario.value.trim() === '') {
         mostrarError(usuario, 'El nombre de usuario no puede estar vacío.');
         valido = false;
@@ -34,10 +28,8 @@ document.getElementById('btnCrearCuenta').addEventListener('click', function () 
         valido = false;
     }
 
-    // =============================================
-    // 4. VALIDAR QUE LAS CONTRASEÑAS COINCIDAN
+    //-- 4. VALIDAR QUE LAS CONTRASEÑAS COINCIDAN --\\
     // Solo se valida si ambos campos tienen algo escrito
-    // =============================================
     if (contrasena.value.trim() !== '' && confirmar.value.trim() !== '') {
         if (contrasena.value !== confirmar.value) {
             mostrarError(confirmar, 'Las contraseñas no coinciden.');
@@ -46,32 +38,25 @@ document.getElementById('btnCrearCuenta').addEventListener('click', function () 
         }
     }
 
-    // =============================================
-    // 5. SI TODO ESTÁ BIEN, SIMULAR EL ENVÍO
-    // =============================================
+    //-- 5. SI TODO ESTÁ BIEN, SIMULA EL ENVÍO DEL REGISTRO --\\
     if (valido) {
         alert('¡Cuenta creada correctamente! Bienvenido, ' + usuario.value.trim() + '.');
 
-        // Limpiar los campos después del envío
+        //-- Limpiar los campos después del envío --\\
         usuario.value = '';
         contrasena.value = '';
         confirmar.value = '';
     }
 });
 
-
-// =============================================
-// FUNCIONES DE APOYO
-// =============================================
-
-// Muestra un mensaje de error debajo del input y lo marca en rojo
+//-- Muestra un mensaje de error debajo del input y lo marca en rojo --\\
 function mostrarError(input, mensaje) {
     input.classList.add('input-error');
 
-    // Buscar si ya existe un mensaje de error para no duplicarlo
+    //-- Buscar si ya existe un mensaje de error para no duplicarlo --\\
     let spanError = input.parentElement.querySelector('.mensaje-error');
 
-    // Si no existe el span, crearlo
+    //-- Si no existe el span, crearlo --\\
     if (!spanError) {
         spanError = document.createElement('span');
         spanError.classList.add('mensaje-error');
@@ -81,7 +66,7 @@ function mostrarError(input, mensaje) {
     spanError.textContent = mensaje;
 }
 
-// Quita el borde rojo y borra los mensajes de error de todos los campos
+//-- Quita el borde rojo y borra los mensajes de error de todos los campos --\\
 function limpiarErrores(campos) {
     campos.forEach(function (input) {
         input.classList.remove('input-error');
